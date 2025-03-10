@@ -14,8 +14,8 @@ jobs:
         - name: Upload a Build Artifact
           uses: actions/upload-artifact@v4.1.0
           with:
-            name: rapport.pdf
-            path: rapport.pdf
+            name: rapport.html
+            path: rapport.html
 
         - name: Envoi de mail
           uses: dawidd6/action-send-mail@v3
@@ -32,5 +32,5 @@ jobs:
             cc: dataimpact@gmail.com
             ignore_cert: true
             convert_markdown: true
-            attachments: rapport.pdf
+            attachments: rapport.html
             priority: low
