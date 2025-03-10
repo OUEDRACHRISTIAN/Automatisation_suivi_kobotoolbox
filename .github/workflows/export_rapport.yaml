@@ -4,7 +4,7 @@ on:
 
 
 jobs:
-  generate-pdf:
+  generate-html:
     permissions:
       contents: write
       pages: write
@@ -37,14 +37,14 @@ jobs:
     - name: Render Quarto Project
       uses: quarto-dev/quarto-actions/render@v2
       with:
-        to: pdf
+        to: html
         path: rapport.qmd
     
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: rapport.pdf
-        path: rapport.pdf
+        name: rapport.html
+        path: rapport.html
 
     - name: Commit results
       run: |
