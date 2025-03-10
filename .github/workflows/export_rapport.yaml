@@ -25,7 +25,7 @@ jobs:
             any::xml2
             any::gt
             any::tidyverse
-            any::latex
+           
 
     - name: Setup Quarto
       uses: quarto-dev/quarto-actions/setup@v2
