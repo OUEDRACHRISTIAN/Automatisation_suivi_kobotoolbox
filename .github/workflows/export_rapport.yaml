@@ -30,6 +30,15 @@ jobs:
       uses: quarto-dev/quarto-actions/setup@v2
       with:
         tinytex: true
+      
+      
+      #A
+   - name: Installer Chromium
+     uses: browser-actions/setup-chromium@v2
+     with:
+      chromium-version: 114.0.5735.133
+
+        
     - name: Check chromium
       run: |
         echo $(which chromium-browser)
