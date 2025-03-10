@@ -27,8 +27,8 @@ asset_list |>
 #Recuperer les informations pour une enquetes données avec le uid
 
 asset_list$uid
-uid <- asset_list$uid[3]
-asset <- kobo_asset(uid)
+MY_UID <- asset_list$uid[3]
+asset <- kobo_asset(MY_UID)
 asset
 
 
