@@ -1,0 +1,31 @@
+---
+title: "rapport"
+output:
+  html_document: default
+  pdf_document: 
+    latex_engine: xelatex
+  word_document: default
+date: "2025-02-10"
+author: "Christian Cyriaque"
+---
+
+```{r, message=FALSE, warning=FALSE}
+library(labelled)
+library(tidyverse)
+library(readr)
+library(janitor)
+library(gt)
+
+df<-read_rds("mydf.rds")
+
+df<- df |>
+   clean_names() |>
+   remove_labels() |>
+  select(3:6)
+
+
+
+  
+  df |>
+    gt()
+```
