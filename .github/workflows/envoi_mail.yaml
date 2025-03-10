@@ -12,7 +12,7 @@ jobs:
         - uses: actions/checkout@v4
         
         - name: Upload a Build Artifact
-          uses: actions/upload-artifact@v3.2.0
+          uses: actions/upload-artifact@v4.1.0
           with:
             name: rapport.pdf
             path: rapport.pdf
