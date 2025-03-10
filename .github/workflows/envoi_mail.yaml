@@ -1,41 +1,36 @@
-
-name: envoi du mail
-
-
 on:
-    schedule: 
-    -  cron: '15 * * * *'
+    schedule:
+      - cron: '5 * * * *'
 jobs:
-  envoi_mail:
-    permissions:
-       contents: write
-       pages : write
-    runs-on: ubuntu-latest
-    
-    
-    steps:
-        uses: actions/checkout@v4
-        
-      - name: Upload a build Artifact
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: rapport.pdf
-          path: rapport.pdf
+    envoi_mail:
+      permissions:
+        contents: write
+        pages: write
+      runs-on: ubuntu-latest
 
-      - name: Envoi du mail
-    
-      with:
-    
-          server_port: 465
-          secure: true
-          username: ${{secrets.MAIL_USERNAME_GMA}}
-          password: ${{secrets.MAIL_PASSWORD_GMA}}
-          subject: Le tableau recapitulatif du jour
-          to: dataimpactafrica@gmail.com
-          from:  Christian Cyriaque 
-          body: Veuillez trouver ci-joint le tableau recapitulatif de la situation de la collecte de données
-          ignore_cert: true
-          convert_markdown: true
-          attachments: rapport.pdf
-          priority: low
-   
+      steps:
+        - uses: actions/checkout@v4
+        
+        - name: Upload a Build Artifact
+          uses: actions/upload-artifact@v3.1.0
+          with:
+            name: rapport.pdf
+            path: rapport.pdf
+
+        - name: Envoi de mail
+          uses: dawidd6/action-send-mail@v3
+          with:
+            server_address: smtp.gmail.com
+            server_port: 465
+            secure: true
+            username: ${{secrets.MAIL_USERNAME_GHA}}
+            password: ${{secrets.MAIL_PASSWORD_GHA}}
+            subject: Le Tableau recapitulatif du jour
+            to: ouedraogocyriaque1@gmail.com
+            from: Christian Cyriaque
+            body: Veuillez trouver ci-joint le tableau recapitulatif de la situation de la collecte de ce jour
+            cc: dataimpact@gmail.com
+            ignore_cert: true
+            convert_markdown: true
+            attachments: rapport.pdf
+            priority: low

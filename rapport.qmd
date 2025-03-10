@@ -1,10 +1,9 @@
 ---
 title: "rapport"
 output:
-  html_document: default
+   
   pdf_document: 
     latex_engine: xelatex
-  word_document: default
 date: "2025-02-10"
 author: "Christian Cyriaque"
 ---
