@@ -4,7 +4,7 @@ on:
 
 
 jobs:
-  generate-html:
+  generate-pdf:
     permissions:
       contents: write
       pages: write
@@ -25,6 +25,7 @@ jobs:
             any::xml2
             any::gt
             any::tidyverse
+            any::latex
 
     - name: Setup Quarto
       uses: quarto-dev/quarto-actions/setup@v2
@@ -38,7 +39,7 @@ jobs:
     - name: Render Quarto Project
       uses: quarto-dev/quarto-actions/render@v2
       with:
-        to: html
+        to: pdf
         path: rapport.qmd
     
     - name: Upload a Build Artifact
