@@ -27,7 +27,7 @@ jobs:
             password: ${{secrets.MAIL_PASSWORD_GHA}}
             subject: Le Tableau recapitulatif du jour
             to: ouedraogocyriaque1@gmail.com
-            from: Christian Cyriaque
+            from: Cyriaque Ouedraogo
             body: Veuillez trouver ci-joint le tableau recapitulatif de la situation de la collecte de ce jour
             cc: dataimpact@gmail.com
             ignore_cert: true
