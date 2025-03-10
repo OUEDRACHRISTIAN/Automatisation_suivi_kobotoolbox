@@ -24,7 +24,7 @@ asset_list |>
 #Recuperer les informations pour une enquetes données avec le uid
 
 
-asset <- kobo_asset(Sys.getenv('MY_IUD'))
+asset <- kobo_asset(Sys.getenv('MY_UID'))
 asset
 
 
