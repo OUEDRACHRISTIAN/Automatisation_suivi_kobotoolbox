@@ -37,7 +37,7 @@ jobs:
       
 
       - name: Importation des données
-        run: Rscript -e 'source("import_data.Rmd")'
+        run: Rscript -e 'source("import_data.")'
         env:
           MY_TOKEN: ${{secrets.MY_TOKEN_GMA}}
           MY_IUD: ${{secrets.MY_IUD_GMA}}
