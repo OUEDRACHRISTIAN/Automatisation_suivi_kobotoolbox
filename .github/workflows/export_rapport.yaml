@@ -1,9 +1,8 @@
 name : Exportation
 on:
      schedule:
-       - cron: "*/6 * * * *"
+       - cron: '*/6 * * * *'
        
-  
 jobs:
   generate-html:
     permissions:
