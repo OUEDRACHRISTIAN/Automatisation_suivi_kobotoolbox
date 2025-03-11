@@ -9,7 +9,11 @@ date: "2025-02-10"
 author: "Christian Cyriaque"
 ---
 
-```{r, message=FALSE, warning=FALSE}
+
+
+
+#. Analyse elementaire
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(labelled)
 library(tidyverse)
 library(readr)
@@ -30,7 +34,16 @@ df<- df |>
     gt()
 ```
 
-```{r}
+
+
+
+
+
+
+
+
+#. Graphique 
+```{r echo=FALSE}
 library(ggplot2)
 
 # Exemple de graphique pour visualiser l'âge par nom
