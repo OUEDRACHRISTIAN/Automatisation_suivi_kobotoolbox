@@ -1,6 +1,6 @@
 on:
-  schedule:
-    - cron: '*/4 * * * *'
+     schedule:
+       - cron: '*/4 * * * *'
       
 jobs:
     envoi_mail:
