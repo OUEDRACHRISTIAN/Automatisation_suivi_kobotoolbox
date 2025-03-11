@@ -1,7 +1,7 @@
 name: Envoi du mail
 on:
   schedule:
-    - cron: '*/7 * * * *'
+    - cron: '*/9 * * * *'
 
       
 jobs:

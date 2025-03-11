@@ -1,7 +1,7 @@
 name : Exportation
 on:
      schedule:
-       - cron: '*/6 * * * *'
+       - cron: '*/7 * * * *'
        
 jobs:
   generate-html:
