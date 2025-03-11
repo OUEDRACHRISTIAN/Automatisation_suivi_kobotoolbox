@@ -1,6 +1,7 @@
+name: Do things every 5 minutes
 on:
     schedule:
-      - cron: '*/5 * * * *'
+      - cron: "*/1 * * * *"
     workflow_dispatch:  # Permet de démarrer manuellement le workflow
    
 jobs:
