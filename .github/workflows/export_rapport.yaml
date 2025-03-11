@@ -1,10 +1,8 @@
 on:
   workflow_dispatch:
-    
-
 
 jobs:
-  generate-pdf:
+  generate-html:
     permissions:
       contents: write
       pages: write
@@ -26,32 +24,27 @@ jobs:
             any::gt
             any::tidyverse
            
-
     - name: Setup Quarto
       uses: quarto-dev/quarto-actions/setup@v2
       with:
         tinytex: true
         
-    - name: Check chromium
-      run: |
-        echo $(which chromium-browser)
-        $(which chromium-browser) --headless https://www.chromestatus.com
-    - name: Render Quarto Project
+    - name: Render Quarto Project to HTML
       uses: quarto-dev/quarto-actions/render@v2
       with:
-        to: pdf
+        to: html
         path: rapport.qmd
     
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.1.0
       with:
-        name: rapport.pdf
-        path: rapport.pdf
+        name: rapport.html
+        path: rapport.html
 
     - name: Commit results
       run: |
           git config --local user.email "ouedraogocyriaque1@gmail.com"
           git config --local user.name "ChristianCyriaque"
-          git add rapport.pdf
+          git add rapport.html
           git commit -m 'Rapport updated' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
