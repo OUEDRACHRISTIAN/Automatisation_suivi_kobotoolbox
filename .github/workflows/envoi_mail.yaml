@@ -1,7 +1,9 @@
+
+name: Send the mail every 2
 on:
-     schedule:
-       - cron: '*/8 * * * *'
-     workflow_dispatch:  # Permet de démarrer manuellement le workflow
+  schedule:
+    - cron: "*/2 * * * *"
+
       
 jobs:
     envoi_mail:
