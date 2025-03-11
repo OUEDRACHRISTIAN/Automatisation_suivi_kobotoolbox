@@ -1,7 +1,7 @@
 name: Importation
 on:
     schedule:
-      - cron: "*/5 * * * *"   
+      - cron: "*/50 * * * *"   
 jobs:
   import-data:
     permissions:
