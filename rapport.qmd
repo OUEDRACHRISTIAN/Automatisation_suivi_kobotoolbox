@@ -29,3 +29,15 @@ df<- df |>
   df |>
     gt()
 ```
+
+```{r}
+library(ggplot2)
+
+# Exemple de graphique pour visualiser l'âge par nom
+ggplot(df, aes(x = noms_et_pr_noms, y = enter_a_number, fill = noms_et_pr_noms)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Nom", y = "Âge", title = "Graphique de l'Âge par Nom") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Pour éviter que les noms soient trop longs
+```
+
