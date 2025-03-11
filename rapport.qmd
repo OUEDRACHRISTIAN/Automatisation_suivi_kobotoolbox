@@ -1,5 +1,5 @@
 ---
-title: "rapport"
+title: "Etat Recaptulatif de la Collecte de ce jour: `r Sys.Date()`"
 output:
    
   pdf_document: 
