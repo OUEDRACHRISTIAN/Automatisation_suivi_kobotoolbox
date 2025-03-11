@@ -40,7 +40,7 @@ jobs:
           git commit -m 'Data updated' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
 
-  generate-html:
+  generate-pdf:
     permissions:
       contents: write
       pages: write
@@ -68,23 +68,23 @@ jobs:
         with:
           tinytex: true
 
-      - name: Render Quarto Project to HTML
+      - name: Render Quarto Project to PDF
         uses: quarto-dev/quarto-actions/render@v2
         with:
-          to: html
-          path: rapport.qmd
+          to: pdf
+          path: rapport.Rmd
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.1.0
         with:
-          name: rapport.html
-          path: rapport.html
+          name: rapport.pdf
+          path: rapport.pdf
 
       - name: Commit results
         run: |
           git config --local user.email "ouedraogocyriaque1@gmail.com"
           git config --local user.name "ChristianCyriaque"
-          git add rapport.html
+          git add rapport.pdf
           git commit -m 'Rapport updated' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
 
@@ -93,14 +93,14 @@ jobs:
       contents: write
       pages: write
     runs-on: ubuntu-latest
-    needs: generate-html  # Attendre la fin de la génération du rapport avant d'envoyer l'email
+    needs: generate-pdf  # Attendre la fin de la génération du rapport avant d'envoyer l'email
     steps:
       - uses: actions/checkout@v4
       
       - name: Download Artifact
         uses: actions/download-artifact@v4.1.0
         with:
-          name: rapport.html
+          name: rapport.pdf
 
       - name: Envoi de mail
         uses: dawidd6/action-send-mail@v3
@@ -117,5 +117,5 @@ jobs:
           cc: dataimpact@gmail.com
           ignore_cert: true
           convert_markdown: true
-          attachments: rapport.html
+          attachments: rapport.pdf
           priority: low

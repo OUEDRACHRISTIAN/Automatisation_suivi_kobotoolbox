@@ -1,10 +1,10 @@
 ---
-title: "Titre de ton document"
+title: "Etat Recaptulatif de la Collecte de ce jour: `r Sys.Date()`"
 format:
   pdf:
     pdf-engine: lualatex
 date: "2025-02-28"
-author: "Christian Cyriaque"
+author: "Christian Cyriaque Wendyam OUEDRAOGO"
 ---
 
 

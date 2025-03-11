@@ -1,7 +1,6 @@
 name: Importation
 on:
-    schedule:
-      - cron: "*/50 * * * *"   
+  workflow_dispatch   
 jobs:
   import-data:
     permissions:
