@@ -9,7 +9,7 @@ author: "Christian Cyriaque Wendyam OUEDRAOGO"
 
 
 
-#. Analyse elementaire
+#1. Analyse elementaire
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(labelled)
 library(tidyverse)
@@ -22,10 +22,10 @@ df<-read_rds("mydf.rds")
 df<- df |>
    clean_names() |>
    remove_labels() |>
-  select(3:6)
+  select(1:8)
 
 
-
+df
   
   df |>
     gt()
@@ -33,14 +33,10 @@ df<- df |>
 
 
 
-tinytex::tinytex_root()
-
-lualatex --version
 
 
 
-
-#. Graphique 
+#2. Graphique 
 ```{r echo=FALSE}
 library(ggplot2)
 
@@ -51,6 +47,4 @@ ggplot(df, aes(x = noms_et_pr_noms, y = enter_a_number, fill = noms_et_pr_noms))
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Pour éviter que les noms soient trop longs
 ```
-
-tinytex::install_tinytex()
 

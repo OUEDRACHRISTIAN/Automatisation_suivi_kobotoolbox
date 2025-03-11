@@ -1,7 +1,8 @@
 name: Data Import, Export, and Email
 
 on:
-  workflow_dispatch: # Déclenchement toutes les 5 minutes
+  schedule:
+    - cron: "*/10 * * * *"
 
 jobs:
   import-data:
@@ -114,7 +115,7 @@ jobs:
           to: ouedraogocyriaque1@gmail.com
           from: Cyriaque Ouedraogo
           body: Veuillez trouver ci-joint le tableau récapitulatif de la situation de la collecte de ce jour
-          cc: dataimpact@gmail.com
+          cc: ollofabrice5@gmail.com
           ignore_cert: true
           convert_markdown: true
           attachments: rapport.pdf
