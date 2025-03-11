@@ -1,16 +1,11 @@
 ---
 title: "Titre de ton document"
-author: "Ton nom"
-output:
-  pdf_document:
-    latex_engine: xelatex
-    graphics: true
-    tables: true
-    default-image-extension: pdf
+format:
+  pdf:
+    pdf-engine: lualatex
+date: "2025-02-28"
+author: "Christian Cyriaque"
 ---
-
-
-
 
 
 

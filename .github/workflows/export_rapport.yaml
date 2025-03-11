@@ -1,10 +1,9 @@
 name : Exportation
 on:
-     schedule:
-       - cron: '*/50 * * * *'
+  workflow_dispatch:
        
 jobs:
-  generate-html:
+  generate-pdf:
     permissions:
       contents: write
       pages: write
@@ -31,22 +30,22 @@ jobs:
       with:
         tinytex: true
         
-    - name: Render Quarto Project to HTML
+    - name: Render Quarto Project to PDF
       uses: quarto-dev/quarto-actions/render@v2
       with:
-        to: html
-        path: rapport.qmd
+        to: pdf
+        path: rapport.Rmd
     
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.1.0
       with:
-        name: rapport.html
-        path: rapport.html
+        name: rapport.pdf
+        path: rapport.pdf
 
     - name: Commit results
       run: |
           git config --local user.email "ouedraogocyriaque1@gmail.com"
           git config --local user.name "ChristianCyriaque"
-          git add rapport.html
+          git add rapport.pdf
           git commit -m 'Rapport updated' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
