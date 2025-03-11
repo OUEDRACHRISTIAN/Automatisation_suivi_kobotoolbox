@@ -1,6 +1,6 @@
 on:
      schedule:
-       - cron: '* * * * *'
+       - cron: '*/8 * * * *'
       
 jobs:
     envoi_mail:
