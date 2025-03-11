@@ -1,9 +1,9 @@
+name : Exportation
 on:
      schedule:
-       - cron: '*/6 * * * *'
+       - cron: "*/6 * * * *"
        
-    workflow_dispatch:  # Permet de démarrer manuellement le workflow
-
+  
 jobs:
   generate-html:
     permissions:

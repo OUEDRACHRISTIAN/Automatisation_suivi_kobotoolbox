@@ -1,8 +1,8 @@
 
-name: Send the mail every 2
+name: Send the mail every  min
 on:
   schedule:
-    - cron: "*/2 * * * *"
+    - cron: "*/8 * * * *"
 
       
 jobs:

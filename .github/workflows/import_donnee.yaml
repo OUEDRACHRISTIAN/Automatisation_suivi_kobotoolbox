@@ -1,8 +1,7 @@
+name: Importation
 on:
     schedule:
-      - cron: '*/15 * * * *'
-    workflow_dispatch:  # Permet de démarrer manuellement le workflow
-   
+      - cron: "*/5 * * * *"   
 jobs:
   import-data:
     permissions:
