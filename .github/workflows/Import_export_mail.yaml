@@ -2,7 +2,7 @@ name: Data Import, Export, and Email
 
 on:
   schedule:
-    - cron: '30 14 * * *'
+    - cron: '40 14 * * *'
 
 
 
