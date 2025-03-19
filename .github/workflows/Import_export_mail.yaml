@@ -117,7 +117,7 @@ jobs:
           to: ouedraogocyriaque1@gmail.com
           from: Cyriaque Ouedraogo
           body: Veuillez trouver ci-joint le tableau récapitulatif de la situation de la collecte de ce jour
-          cc: ollofabrice5@gmail.com
+          cc: dataimpactafrica@gmail.com
           ignore_cert: true
           convert_markdown: true
           attachments: rapport.pdf
